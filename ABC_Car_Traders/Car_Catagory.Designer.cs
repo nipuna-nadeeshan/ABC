@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            LblCount = new Label();
             button1 = new Button();
             BtnLogin = new Button();
             panel2 = new Panel();
@@ -42,7 +43,7 @@
             ColEdit = new DataGridViewButtonColumn();
             ColDelete = new DataGridViewButtonColumn();
             label1 = new Label();
-            LblCount = new Label();
+            priceCol = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv).BeginInit();
@@ -60,6 +61,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 426);
             panel1.TabIndex = 0;
+            // 
+            // LblCount
+            // 
+            LblCount.AutoSize = true;
+            LblCount.Location = new Point(18, 410);
+            LblCount.Name = "LblCount";
+            LblCount.Size = new Size(19, 15);
+            LblCount.TabIndex = 10;
+            LblCount.Text = "00";
             // 
             // button1
             // 
@@ -108,7 +118,7 @@
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Dgv.BackgroundColor = Color.White;
             Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv.Columns.AddRange(new DataGridViewColumn[] { AutoID, Column1, Column2, Column3, Column4, Column5, ColEdit, ColDelete });
+            Dgv.Columns.AddRange(new DataGridViewColumn[] { AutoID, Column1, Column2, Column3, Column4, Column5, ColEdit, ColDelete, priceCol });
             Dgv.Location = new Point(0, 3);
             Dgv.Name = "Dgv";
             Dgv.ReadOnly = true;
@@ -194,14 +204,11 @@
             label1.TabIndex = 2;
             label1.Text = "Car Category";
             // 
-            // LblCount
+            // priceCol
             // 
-            LblCount.AutoSize = true;
-            LblCount.Location = new Point(18, 410);
-            LblCount.Name = "LblCount";
-            LblCount.Size = new Size(19, 15);
-            LblCount.TabIndex = 10;
-            LblCount.Text = "00";
+            priceCol.HeaderText = "price";
+            priceCol.Name = "priceCol";
+            priceCol.ReadOnly = true;
             // 
             // Car_Catagory
             // 
@@ -239,5 +246,6 @@
         private DataGridViewButtonColumn ColEdit;
         private DataGridViewButtonColumn ColDelete;
         private Label LblCount;
+        private DataGridViewTextBoxColumn priceCol;
     }
 }

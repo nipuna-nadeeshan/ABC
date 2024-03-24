@@ -42,6 +42,7 @@
             Column5 = new DataGridViewTextBoxColumn();
             ColEdit = new DataGridViewButtonColumn();
             ColDelete = new DataGridViewButtonColumn();
+            priceCol = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv).BeginInit();
@@ -83,6 +84,7 @@
             button1.TabIndex = 9;
             button1.Text = "Add New Car Part";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // BtnLogin
             // 
@@ -96,6 +98,7 @@
             BtnLogin.TabIndex = 9;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // panel2
             // 
@@ -114,14 +117,16 @@
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Dgv.BackgroundColor = Color.White;
             Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv.Columns.AddRange(new DataGridViewColumn[] { AutoID, Column1, Column2, Column4, Column5, ColEdit, ColDelete });
-            Dgv.Location = new Point(0, 3);
+            Dgv.Columns.AddRange(new DataGridViewColumn[] { AutoID, Column1, Column2, Column4, Column5, ColEdit, ColDelete, priceCol });
+            Dgv.Location = new Point(0, -4);
             Dgv.Name = "Dgv";
             Dgv.ReadOnly = true;
             Dgv.RowHeadersVisible = false;
             Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Dgv.Size = new Size(773, 357);
             Dgv.TabIndex = 0;
+            Dgv.CellClick += Dgv_CellClick;
+            Dgv.CellContentClick += Dgv_CellContentClick;
             // 
             // label1
             // 
@@ -190,6 +195,12 @@
             ColDelete.UseColumnTextForButtonValue = true;
             ColDelete.Width = 46;
             // 
+            // priceCol
+            // 
+            priceCol.HeaderText = "price";
+            priceCol.Name = "priceCol";
+            priceCol.ReadOnly = true;
+            // 
             // carpart_category
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -208,6 +219,8 @@
             ResumeLayout(false);
         }
 
+
+
         #endregion
 
         private Panel panel1;
@@ -216,6 +229,7 @@
         private Button BtnLogin;
         private Panel panel2;
         private DataGridView Dgv;
+        private Label label1;
         private DataGridViewTextBoxColumn AutoID;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
@@ -223,6 +237,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewButtonColumn ColEdit;
         private DataGridViewButtonColumn ColDelete;
-        private Label label1;
+        private DataGridViewTextBoxColumn priceCol;
     }
 }

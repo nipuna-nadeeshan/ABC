@@ -36,6 +36,8 @@ namespace ABC_Car_Traders
             {
                 i++;
                 Dgv.Rows.Add(db.dr[0], i, db.dr[1], db.dr[2], db.dr[3], db.dr[4]);
+                //add data to priceCol
+                Dgv.Rows[Dgv.Rows.Count - 1].Cells[8].Value = db.dr[6];
             }
             LblCount.Text = "Total Cars" + "(" + i.ToString() + ")";
             db.cn.Close();
@@ -53,14 +55,15 @@ namespace ABC_Car_Traders
 
         private void Dvg_Cellclick(object sender, DataGridViewCellEventArgs e)
         {
-            string ColName = Dvg.Columns[e.ColumnIndex].Name;
+            string ColName = Dgv.Columns[e.ColumnIndex].Name;
             if (ColName == "ColEdit")
             {
                 Add_Car f = new Add_Car(this);
-                db._id = (int)Dgv.CurrentRow.Cells[0].Value;
-                f.TxtCarmodel.Text = Dgv.CurrentRow.Cells[2].Value.ToString();//car name
-                f.TxtCarmodel.Text = Dgv.CurrentRow.Cells[3].Value.ToString();//car color
+                db._id = (int)Dgv.CurrentRow.Cells[1].Value;
+                f.TxtCarname.Text = Dgv.CurrentRow.Cells[2].Value.ToString();//car name
+                f.TxtCarcolor.Text = Dgv.CurrentRow.Cells[3].Value.ToString();//car color
                 f.TxtCarmodel.Text = Dgv.CurrentRow.Cells[4].Value.ToString();
+                f.textPrice.Text = Dgv.CurrentRow.Cells[8].Value.ToString();
                 db.ShowImageinPictureBox(f.pic, Dgv, 5);
                 f.BtnUpdate.Enabled = true;
                 f.BtnCreate.Enabled = false;

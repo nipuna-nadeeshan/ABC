@@ -16,6 +16,7 @@ namespace ABC_Car_Traders
         public Customer_Category()
         {
             InitializeComponent();
+            LoadCustomer();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace ABC_Car_Traders
         private void Dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string ColName = Dgv.Columns[e.ColumnIndex].Name;
-            if(ColName == "ColEdit")
+            if (ColName == "ColEdit")
             {
                 db._id = (int)Dgv.CurrentRow.Cells[0].Value;
                 Add_Customer f = new Add_Customer(this);
@@ -58,7 +59,7 @@ namespace ABC_Car_Traders
                 f.TxtAddress.Text = Dgv.CurrentRow.Cells[2].Value.ToString();//TxtId
                 f.TxtCusCon.Text = Dgv.CurrentRow.Cells[2].Value.ToString();
                 f.TxtAddress.Text = Dgv.CurrentRow.Cells[2].Value.ToString();
-                db.ShowImageinPictureBox(f.pic,Dgv,6);
+                db.ShowImageinPictureBox(f.pic, Dgv, 6);
                 f.BtnCreate.Enabled = false;
                 f.BtnUpdate.Enabled = true;
                 f.ShowDialog();
@@ -66,13 +67,18 @@ namespace ABC_Car_Traders
             else if (ColName == "ColDelete")
             {
                 db.cn.Open();
-                db.cm = new System.Data.SqlClient.SqlCommand("Delete fromtbl_customer where id=@id", db.cn);
+                db.cm = new System.Data.SqlClient.SqlCommand("Delete from tbl_customer where id=@id", db.cn);
                 db.cm.Parameters.AddWithValue("@id", Dgv.CurrentRow.Cells[0].Value);
                 db.cm.ExecuteNonQuery();
                 MessageBox.Show("Customer Deleted Successfully");
                 db.cn.Close();
                 LoadCustomer();
             }
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

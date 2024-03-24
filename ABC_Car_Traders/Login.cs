@@ -13,6 +13,7 @@ namespace ABC_Car_Traders
 {
     public partial class Login : Form
     {
+        bool isAdmin = true;
         public Login()
         {
             InitializeComponent();
@@ -44,9 +45,22 @@ namespace ABC_Car_Traders
             db.dr = db.cm.ExecuteReader();
             if (db.dr.HasRows)
             {
-                Main f = new Main();
-                f.Show();
-                this.Hide();
+                //check if radio customer button ticked
+                
+                
+                if (RadioAdmin.Checked)
+                {
+                    Main f = new Main();
+                    f.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    CustomerMain f = new CustomerMain();
+                    f.Show();
+                    this.Hide();
+                }
+                
             }
             db.cn.Close();
 
@@ -54,7 +68,20 @@ namespace ABC_Car_Traders
 
         private void BtnCreateUser_Click(object sender, EventArgs e)
         {
-           Create_User f = new Create_User();
+            Create_User f = new Create_User();
             f.Show();
         }
+
+        private void RadioAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            isAdmin = true;
+        }
+
+        private void RadioCustomer_CheckedChanged(object sender, EventArgs e)
+        {
+            //give a alert message
+            Console.WriteLine("Customer Login");
+            isAdmin = false;
+        }
     }
+}

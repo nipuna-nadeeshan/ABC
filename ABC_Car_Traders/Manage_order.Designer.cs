@@ -33,15 +33,6 @@
             panel2 = new Panel();
             Dgv = new DataGridView();
             label1 = new Label();
-            AutoID = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            ColEdit = new DataGridViewButtonColumn();
-            ColDelete = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv).BeginInit();
@@ -70,6 +61,7 @@
             BtnLogin.TabIndex = 9;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // panel2
             // 
@@ -88,7 +80,6 @@
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Dgv.BackgroundColor = Color.White;
             Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv.Columns.AddRange(new DataGridViewColumn[] { AutoID, Column1, Column2, Column3, Column4, Column5, Column6, ColEdit, ColDelete });
             Dgv.Location = new Point(0, 3);
             Dgv.Name = "Dgv";
             Dgv.ReadOnly = true;
@@ -96,6 +87,7 @@
             Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Dgv.Size = new Size(773, 357);
             Dgv.TabIndex = 0;
+            Dgv.CellContentClick += Dgv_CellContentClick;
             // 
             // label1
             // 
@@ -106,77 +98,6 @@
             label1.Size = new Size(164, 28);
             label1.TabIndex = 2;
             label1.Text = "Manage Orders";
-            // 
-            // AutoID
-            // 
-            AutoID.HeaderText = "Column1";
-            AutoID.Name = "AutoID";
-            AutoID.ReadOnly = true;
-            AutoID.Visible = false;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Order Type";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column3.HeaderText = "Order Model";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 99;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column4.HeaderText = "Quantity";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 78;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column5.HeaderText = "Order Date";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 89;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Payment Type";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // ColEdit
-            // 
-            ColEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            ColEdit.HeaderText = "Pending/ Approve";
-            ColEdit.Name = "ColEdit";
-            ColEdit.ReadOnly = true;
-            ColEdit.Text = "Edit";
-            ColEdit.UseColumnTextForButtonValue = true;
-            ColEdit.Width = 99;
-            // 
-            // ColDelete
-            // 
-            ColDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            ColDelete.HeaderText = "Reject";
-            ColDelete.Name = "ColDelete";
-            ColDelete.ReadOnly = true;
-            ColDelete.Text = "Delete";
-            ColDelete.UseColumnTextForButtonValue = true;
-            ColDelete.Width = 45;
             // 
             // Manage_order
             // 
@@ -203,14 +124,5 @@
         private Panel panel2;
         private DataGridView Dgv;
         private Label label1;
-        private DataGridViewTextBoxColumn AutoID;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewButtonColumn ColEdit;
-        private DataGridViewButtonColumn ColDelete;
     }
 }

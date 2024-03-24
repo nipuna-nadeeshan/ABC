@@ -22,7 +22,7 @@ namespace CSharp_ABC_Car_Traders
 
         
 
-    public static string _Access = @"Data Source=SAMADHI-LAP\SQLEXPRESS;Initial Catalog=ABC_CarDB;Integrated Security=True";
+    public static string _Access = @"Data Source=NEO\SQLEXPRESS;Initial Catalog=ABC_CarDB;Integrated Security=True";
     public static SqlConnection cn = new SqlConnection(_Access);
     public static SqlCommand cm = new SqlCommand("", cn);
 

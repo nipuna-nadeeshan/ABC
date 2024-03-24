@@ -64,6 +64,7 @@
             BtnLogin.TabIndex = 10;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click_1;
             // 
             // label1
             // 
@@ -90,25 +91,26 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(126, 64);
+            dateTimePicker1.Location = new Point(127, 32);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 17;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Car", "Car Part" });
-            comboBox1.Location = new Point(127, 16);
+            comboBox1.Location = new Point(127, 74);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(199, 23);
             comboBox1.TabIndex = 15;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(3, 64);
+            label6.Location = new Point(4, 32);
             label6.Name = "label6";
             label6.Size = new Size(102, 22);
             label6.TabIndex = 13;
@@ -130,12 +132,13 @@
             BtnCreate.TabIndex = 10;
             BtnCreate.Text = "View Status";
             BtnCreate.UseVisualStyleBackColor = false;
+            BtnCreate.Click += BtnCreate_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(17, 14);
+            label2.Location = new Point(17, 72);
             label2.Name = "label2";
             label2.Size = new Size(86, 22);
             label2.TabIndex = 0;

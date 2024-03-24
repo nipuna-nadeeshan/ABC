@@ -99,6 +99,7 @@
             BtnLogin.TabIndex = 9;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // panel2
             // 

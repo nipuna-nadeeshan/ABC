@@ -33,6 +33,8 @@
             BtnLogin = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            label5 = new Label();
+            textprice = new TextBox();
             BtnUpdate = new Button();
             button2 = new Button();
             BtnCreate = new Button();
@@ -56,7 +58,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(573, 88);
+            panel1.Size = new Size(581, 88);
             panel1.TabIndex = 1;
             // 
             // BtnLogin
@@ -71,6 +73,7 @@
             BtnLogin.TabIndex = 10;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // label1
             // 
@@ -85,6 +88,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Silver;
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(textprice);
             panel2.Controls.Add(BtnUpdate);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(BtnCreate);
@@ -96,8 +101,26 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(15, 106);
             panel2.Name = "panel2";
-            panel2.Size = new Size(570, 320);
+            panel2.Size = new Size(570, 374);
             panel2.TabIndex = 2;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(212, 115);
+            label5.Name = "label5";
+            label5.Size = new Size(59, 22);
+            label5.TabIndex = 14;
+            label5.Text = "Price : ";
+            label5.Click += label5_Click;
+            // 
+            // textprice
+            // 
+            textprice.Location = new Point(347, 114);
+            textprice.Name = "textprice";
+            textprice.Size = new Size(204, 23);
+            textprice.TabIndex = 13;
             // 
             // BtnUpdate
             // 
@@ -109,12 +132,13 @@
             BtnUpdate.FlatAppearance.MouseOverBackColor = Color.Cyan;
             BtnUpdate.FlatStyle = FlatStyle.Flat;
             BtnUpdate.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnUpdate.Location = new Point(440, 271);
+            BtnUpdate.Location = new Point(439, 289);
             BtnUpdate.Name = "BtnUpdate";
             BtnUpdate.Size = new Size(103, 42);
             BtnUpdate.TabIndex = 12;
             BtnUpdate.Text = "Update";
             BtnUpdate.UseVisualStyleBackColor = false;
+            BtnUpdate.Click += BtnUpdate_Click;
             // 
             // button2
             // 
@@ -126,12 +150,13 @@
             button2.FlatAppearance.MouseOverBackColor = Color.Cyan;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Palatino Linotype", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(347, 215);
+            button2.Location = new Point(347, 253);
             button2.Name = "button2";
             button2.Size = new Size(154, 30);
             button2.TabIndex = 11;
             button2.Text = "Load Image";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // BtnCreate
             // 
@@ -143,20 +168,22 @@
             BtnCreate.FlatAppearance.MouseOverBackColor = Color.Cyan;
             BtnCreate.FlatStyle = FlatStyle.Flat;
             BtnCreate.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnCreate.Location = new Point(212, 271);
+            BtnCreate.Location = new Point(212, 289);
             BtnCreate.Name = "BtnCreate";
             BtnCreate.Size = new Size(190, 42);
             BtnCreate.TabIndex = 10;
             BtnCreate.Text = "Add New Car Part";
             BtnCreate.UseVisualStyleBackColor = false;
+            BtnCreate.Click += BtnCreate_Click;
             // 
             // pic
             // 
-            pic.Location = new Point(347, 117);
+            pic.Location = new Point(347, 155);
             pic.Name = "pic";
             pic.Size = new Size(206, 92);
             pic.TabIndex = 8;
             pic.TabStop = false;
+            pic.Click += pic_Click;
             // 
             // TxtCarmodel
             // 
@@ -179,7 +206,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(212, 117);
+            label3.Location = new Point(208, 188);
             label3.Name = "label3";
             label3.Size = new Size(129, 22);
             label3.TabIndex = 2;
@@ -208,7 +235,7 @@
             panel3.BackgroundImageLayout = ImageLayout.None;
             panel3.Location = new Point(19, 106);
             panel3.Name = "panel3";
-            panel3.Size = new Size(202, 313);
+            panel3.Size = new Size(202, 331);
             panel3.TabIndex = 13;
             // 
             // Add_Carparts
@@ -216,7 +243,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
-            ClientSize = new Size(597, 445);
+            ClientSize = new Size(605, 492);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -245,8 +272,10 @@
         public TextBox TxtCarmodel;
         private Label label4;
         private Label label3;
-        private TextBox TxtCarname;
+        public TextBox TxtCarname;
         private Label label2;
         private Panel panel3;
+        private Label label5;
+        public TextBox textprice;
     }
 }

@@ -31,20 +31,16 @@
             panel1 = new Panel();
             BtnLogin = new Button();
             panel2 = new Panel();
-            textBox3 = new TextBox();
+            Dgv = new DataGridView();
+            modelBox = new TextBox();
             label4 = new Label();
             button2 = new Button();
             button1 = new Button();
-            textBox2 = new TextBox();
+            nameBox = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            idBox = new TextBox();
             label1 = new Label();
-            Dgv = new DataGridView();
-            AutoID = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv).BeginInit();
@@ -58,7 +54,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(776, 426);
+            panel1.Size = new Size(776, 549);
             panel1.TabIndex = 2;
             // 
             // BtnLogin
@@ -73,30 +69,48 @@
             BtnLogin.TabIndex = 9;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(Dgv);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(modelBox);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(nameBox);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(idBox);
             panel2.Location = new Point(0, 46);
             panel2.Name = "panel2";
-            panel2.Size = new Size(776, 363);
+            panel2.Size = new Size(776, 500);
             panel2.TabIndex = 3;
             // 
-            // textBox3
+            // Dgv
             // 
-            textBox3.Location = new Point(109, 81);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(217, 23);
-            textBox3.TabIndex = 9;
+            Dgv.AllowUserToAddRows = false;
+            Dgv.AllowUserToDeleteRows = false;
+            Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Dgv.BackgroundColor = Color.White;
+            Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Dgv.Location = new Point(3, 128);
+            Dgv.Name = "Dgv";
+            Dgv.ReadOnly = true;
+            Dgv.RowHeadersVisible = false;
+            Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Dgv.Size = new Size(773, 372);
+            Dgv.TabIndex = 11;
+            // 
+            // modelBox
+            // 
+            modelBox.Location = new Point(109, 81);
+            modelBox.Name = "modelBox";
+            modelBox.Size = new Size(217, 23);
+            modelBox.TabIndex = 9;
+            modelBox.TextChanged += textBox3_TextChanged;
             // 
             // label4
             // 
@@ -119,6 +133,7 @@
             button2.TabIndex = 6;
             button2.Text = "Clear";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -131,13 +146,14 @@
             button1.TabIndex = 5;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // textBox2
+            // nameBox
             // 
-            textBox2.Location = new Point(112, 48);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 23);
-            textBox2.TabIndex = 4;
+            nameBox.Location = new Point(112, 48);
+            nameBox.Name = "nameBox";
+            nameBox.Size = new Size(214, 23);
+            nameBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -159,12 +175,13 @@
             label2.TabIndex = 2;
             label2.Text = "Car Part ID :";
             // 
-            // textBox1
+            // idBox
             // 
-            textBox1.Location = new Point(113, 16);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(213, 23);
-            textBox1.TabIndex = 1;
+            idBox.Location = new Point(113, 16);
+            idBox.Name = "idBox";
+            idBox.Size = new Size(213, 23);
+            idBox.TabIndex = 1;
+            idBox.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
@@ -176,58 +193,12 @@
             label1.TabIndex = 2;
             label1.Text = "Car Part Details";
             // 
-            // Dgv
-            // 
-            Dgv.AllowUserToAddRows = false;
-            Dgv.AllowUserToDeleteRows = false;
-            Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            Dgv.BackgroundColor = Color.White;
-            Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv.Columns.AddRange(new DataGridViewColumn[] { AutoID, Column1, Column2, Column4 });
-            Dgv.Location = new Point(2, 154);
-            Dgv.Name = "Dgv";
-            Dgv.ReadOnly = true;
-            Dgv.RowHeadersVisible = false;
-            Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Dgv.Size = new Size(773, 206);
-            Dgv.TabIndex = 11;
-            // 
-            // AutoID
-            // 
-            AutoID.HeaderText = "Column1";
-            AutoID.Name = "AutoID";
-            AutoID.ReadOnly = true;
-            AutoID.Visible = false;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Car Part Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column4.HeaderText = "Car Part Model";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 111;
-            // 
             // Carpart_Details
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 581);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Carpart_Details";
@@ -246,19 +217,15 @@
         private Panel panel1;
         private Button BtnLogin;
         private Panel panel2;
-        private TextBox textBox3;
+        private TextBox modelBox;
         private Label label4;
         private Button button2;
         private Button button1;
-        private TextBox textBox2;
+        private TextBox nameBox;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox idBox;
         private Label label1;
         private DataGridView Dgv;
-        private DataGridViewTextBoxColumn AutoID;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column4;
     }
 }

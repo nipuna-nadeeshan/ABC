@@ -32,17 +32,17 @@
             BtnLogin = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            comboBox3 = new ComboBox();
+            label7 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             label6 = new Label();
             BtnCreate = new Button();
             label5 = new Label();
-            TxtCusCon = new TextBox();
+            qtyBox = new TextBox();
             label4 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            label7 = new Label();
-            comboBox3 = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -70,6 +70,7 @@
             BtnLogin.TabIndex = 10;
             BtnLogin.Text = "X";
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // label1
             // 
@@ -92,13 +93,59 @@
             panel2.Controls.Add(label6);
             panel2.Controls.Add(BtnCreate);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(TxtCusCon);
+            panel2.Controls.Add(qtyBox);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(12, 106);
             panel2.Name = "panel2";
             panel2.Size = new Size(464, 386);
             panel2.TabIndex = 3;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Cash Payments", "Online Online" });
+            comboBox3.Location = new Point(129, 185);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(199, 23);
+            comboBox3.TabIndex = 19;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(3, 183);
+            label7.Name = "label7";
+            label7.Size = new Size(125, 22);
+            label7.TabIndex = 18;
+            label7.Text = "Payment Type :";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(129, 137);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 17;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(127, 54);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(199, 23);
+            comboBox2.TabIndex = 16;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Car", "Car Part" });
+            comboBox1.Location = new Point(127, 16);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(199, 23);
+            comboBox1.TabIndex = 15;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -126,6 +173,7 @@
             BtnCreate.TabIndex = 10;
             BtnCreate.Text = "Add Order";
             BtnCreate.UseVisualStyleBackColor = false;
+            BtnCreate.Click += BtnCreate_Click;
             // 
             // label5
             // 
@@ -137,12 +185,12 @@
             label5.TabIndex = 6;
             label5.Text = "Models :";
             // 
-            // TxtCusCon
+            // qtyBox
             // 
-            TxtCusCon.Location = new Point(128, 95);
-            TxtCusCon.Name = "TxtCusCon";
-            TxtCusCon.Size = new Size(199, 23);
-            TxtCusCon.TabIndex = 5;
+            qtyBox.Location = new Point(128, 95);
+            qtyBox.Name = "qtyBox";
+            qtyBox.Size = new Size(199, 23);
+            qtyBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -163,50 +211,6 @@
             label2.Size = new Size(105, 22);
             label2.TabIndex = 0;
             label2.Text = "Order Type :";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Car", "Car Part" });
-            comboBox1.Location = new Point(127, 16);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(199, 23);
-            comboBox1.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Car Models", "Car Part Models" });
-            comboBox2.Location = new Point(127, 54);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(199, 23);
-            comboBox2.TabIndex = 16;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(129, 137);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 17;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(3, 183);
-            label7.Name = "label7";
-            label7.Size = new Size(125, 22);
-            label7.TabIndex = 18;
-            label7.Text = "Payment Type :";
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Cash Payments", "Online Online" });
-            comboBox3.Location = new Point(129, 185);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(199, 23);
-            comboBox3.TabIndex = 19;
             // 
             // Add_Order
             // 
@@ -236,7 +240,7 @@
         private Label label6;
         public Button BtnCreate;
         private Label label5;
-        public TextBox TxtCusCon;
+        public TextBox qtyBox;
         private Label label4;
         private Label label2;
         private ComboBox comboBox2;

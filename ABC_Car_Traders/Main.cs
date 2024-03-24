@@ -46,5 +46,22 @@ namespace ABC_Car_Traders
             Customer_Category f = new Customer_Category();
             f.ShowDialog();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMngparts_Click(object sender, EventArgs e)
+        {
+            carpart_category f = new carpart_category();
+            f.ShowDialog();
+        }
+
+        private void BtnMngOrders_Click(object sender, EventArgs e)
+        {
+            Manage_order manage_Order = new Manage_order();
+            manage_Order.ShowDialog();
+        }
     }
 }

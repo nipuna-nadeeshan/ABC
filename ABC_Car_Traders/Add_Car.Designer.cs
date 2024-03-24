@@ -33,6 +33,7 @@
             BtnLogin = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            panel3 = new Panel();
             BtnUpdate = new Button();
             button2 = new Button();
             BtnCreate = new Button();
@@ -44,7 +45,8 @@
             label3 = new Label();
             TxtCarname = new TextBox();
             label2 = new Label();
-            panel3 = new Panel();
+            textPrice = new TextBox();
+            label6 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic).BeginInit();
@@ -58,7 +60,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(570, 88);
+            panel1.Size = new Size(573, 88);
             panel1.TabIndex = 0;
             // 
             // BtnLogin
@@ -88,6 +90,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Silver;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(textPrice);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(BtnUpdate);
             panel2.Controls.Add(button2);
@@ -102,8 +106,17 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(12, 106);
             panel2.Name = "panel2";
-            panel2.Size = new Size(570, 320);
+            panel2.Size = new Size(570, 388);
             panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.None;
+            panel3.Location = new Point(3, 16);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(201, 171);
+            panel3.TabIndex = 2;
             // 
             // BtnUpdate
             // 
@@ -115,7 +128,7 @@
             BtnUpdate.FlatAppearance.MouseOverBackColor = Color.Cyan;
             BtnUpdate.FlatStyle = FlatStyle.Flat;
             BtnUpdate.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnUpdate.Location = new Point(440, 271);
+            BtnUpdate.Location = new Point(434, 334);
             BtnUpdate.Name = "BtnUpdate";
             BtnUpdate.Size = new Size(103, 42);
             BtnUpdate.TabIndex = 12;
@@ -133,7 +146,7 @@
             button2.FlatAppearance.MouseOverBackColor = Color.Cyan;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Palatino Linotype", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(299, 235);
+            button2.Location = new Point(299, 298);
             button2.Name = "button2";
             button2.Size = new Size(154, 30);
             button2.TabIndex = 11;
@@ -151,7 +164,7 @@
             BtnCreate.FlatAppearance.MouseOverBackColor = Color.Cyan;
             BtnCreate.FlatStyle = FlatStyle.Flat;
             BtnCreate.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnCreate.Location = new Point(245, 271);
+            BtnCreate.Location = new Point(235, 334);
             BtnCreate.Name = "BtnCreate";
             BtnCreate.Size = new Size(157, 42);
             BtnCreate.TabIndex = 10;
@@ -161,7 +174,7 @@
             // 
             // pic
             // 
-            pic.Location = new Point(299, 137);
+            pic.Location = new Point(299, 200);
             pic.Name = "pic";
             pic.Size = new Size(252, 92);
             pic.TabIndex = 8;
@@ -205,7 +218,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(210, 151);
+            label3.Location = new Point(210, 214);
             label3.Name = "label3";
             label3.Size = new Size(95, 22);
             label3.TabIndex = 2;
@@ -228,21 +241,29 @@
             label2.TabIndex = 0;
             label2.Text = "Car Name :";
             // 
-            // panel3
+            // textPrice
             // 
-            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
-            panel3.BackgroundImageLayout = ImageLayout.None;
-            panel3.Location = new Point(3, 16);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(201, 171);
-            panel3.TabIndex = 2;
+            textPrice.Location = new Point(299, 155);
+            textPrice.Name = "textPrice";
+            textPrice.Size = new Size(252, 23);
+            textPrice.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(219, 156);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 22);
+            label6.TabIndex = 14;
+            label6.Text = "Price :";
             // 
             // Add_Car
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
-            ClientSize = new Size(594, 450);
+            ClientSize = new Size(597, 546);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -262,11 +283,11 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
-        private TextBox TxtCarcolor;
+        public TextBox TxtCarcolor;
         private Label label5;
         private Label label4;
         private Label label3;
-        private TextBox TxtCarname;
+        public TextBox TxtCarname;
         private Label label2;
         private Button BtnLogin;
         public Button BtnUpdate;
@@ -275,5 +296,7 @@
         public Button BtnCreate;
         public Button button2;
         private Panel panel3;
+        private Label label6;
+        public TextBox textPrice;
     }
 }

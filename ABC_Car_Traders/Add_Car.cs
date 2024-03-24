@@ -37,10 +37,12 @@ namespace ABC_Car_Traders
         private void button1_Click(object sender, EventArgs e)
         {
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("insert into tbl_car(Car_name,Car_color,Car_model,Car_img) values (@Car_name,@Car_color,@Car_model,@Car_img)", db.cn);
+            db.cm = new System.Data.SqlClient.SqlCommand("insert into tbl_car(Car_name,Car_color,Car_model,Car_img , price) values (@Car_name,@Car_color,@Car_model,@Car_img , @price)", db.cn);
             db.cm.Parameters.AddWithValue("@Car_name", TxtCarname.Text);
             db.cm.Parameters.AddWithValue("@Car_color", TxtCarcolor.Text);
             db.cm.Parameters.AddWithValue("@Car_model", TxtCarmodel.Text);
+            double price = Convert.ToDouble(textPrice.Text);
+            db.cm.Parameters.AddWithValue("@price", price);
             db.ConvertImageToSave(pic);
             db.cm.Parameters.AddWithValue("@Car_img", db._img);
             db.cm.ExecuteNonQuery();
@@ -56,11 +58,13 @@ namespace ABC_Car_Traders
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("update tbl_car set Car_name=@Car_Name,Car_color=@Car_color,Car_model=@Car_model,Car_img=@Car_img where id=@id", db.cn);
-            db.cm.Parameters.AddWithValue("@db",db._id);
+            db.cm = new System.Data.SqlClient.SqlCommand("update tbl_car set Car_name=@Car_Name,Car_color=@Car_color,Car_model=@Car_model,Car_img=@Car_img , price=@price where id=@id", db.cn);
+            db.cm.Parameters.AddWithValue("@id",db._id);
             db.cm.Parameters.AddWithValue("@Car_name", TxtCarname.Text);
             db.cm.Parameters.AddWithValue("@Car_color", TxtCarcolor.Text);
             db.cm.Parameters.AddWithValue("@Car_model", TxtCarmodel.Text);
+            double price = Convert.ToDouble(textPrice.Text);
+            db.cm.Parameters.AddWithValue("@price", price);
             db.ConvertImageToSave(pic);
             db.cm.Parameters.AddWithValue("@Car_img", db._img);
             db.cm.ExecuteNonQuery();

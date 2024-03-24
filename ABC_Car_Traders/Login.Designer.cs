@@ -88,6 +88,7 @@
             RadioAdmin.TabStop = true;
             RadioAdmin.Text = "Admin";
             RadioAdmin.UseVisualStyleBackColor = true;
+            RadioAdmin.CheckedChanged += RadioAdmin_CheckedChanged;
             // 
             // BtnExit
             // 
